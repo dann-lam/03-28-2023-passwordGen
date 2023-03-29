@@ -1,8 +1,11 @@
 // Assignment Code
+
 //We can have an array that is all of the available options of characters.
 //E.G. [[012], [abc], [ABC], [!@#]]
 
 //Each array is loaded into the "options" array, thus we don't have to worry about choosing a type that was set to false or re-rolling our options on a math.random if it falls to a false.
+
+//This isn't very friendly. All the functions are nested inside generatePassword.
 
 var generateBtn = document.querySelector("#generate");
 
@@ -17,8 +20,6 @@ let optionsArr = [];
 
 //Initializes our characters.
 
-//Yes, I know there is a fancier way of creating these... but this is much simpler to deal with.
-
 const lowerCaseLetters = ['a', 'b','c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's','t', 'u', 'v', 'w', 'x', 'y', 'z'];
 const upperCaseLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 const numbersZeroToNine = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
@@ -26,6 +27,7 @@ const selectedSpecialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', 
 
 
 //This keeps asking the user for a value between 8 and 128. Is there a way to "stop" this if the user wants to discontinue?
+
 while (lengthPrompt > 128 || lengthPrompt < 8){
   lengthPrompt = prompt("Please input password length between 8 - 128 characters.");
 }
@@ -96,9 +98,9 @@ outputFinisher();
 //This is a poor man's shuffle. there's one called Fisher-Yates which is apparently the 'best'.
 //This math.random stuff is complex.
 let outputRandomizer = () => {
-  console.log(`Output was: ${outputArr}`)
+
   outputArr.sort(() => (Math.random() - 0.5))
-  console.log(`Output is now: ${outputArr}`)
+
 }
 //Shuffle our outputArr
 outputRandomizer();
@@ -109,6 +111,8 @@ finalPassword = outputArr.join("");
 // return finalPassword;
 return finalPassword;
 }
+
+
 // Write password to the #password input
   function writePassword() {
     var password = generatePassword();
@@ -120,4 +124,7 @@ return finalPassword;
 
 // writePassword)
 // Add event listener to generate button
+
+
+
 generateBtn.addEventListener("click", writePassword) ;
