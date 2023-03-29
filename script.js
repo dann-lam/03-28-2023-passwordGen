@@ -95,13 +95,13 @@ outputFinisher();
 //Next we want to shuffle our output so the first four characters aren't as guessible.
 //This is a poor man's shuffle. there's one called Fisher-Yates which is apparently the 'best'.
 //This math.random stuff is complex.
-// let outputRandomizer = () => {
-//   console.log(`Output was: ${outputArr}`)
-//   outputArr.sort(() => (Math.random() - 0.5))
-//   console.log(`Output is now: ${outputArr}`)
-// }
+let outputRandomizer = () => {
+  console.log(`Output was: ${outputArr}`)
+  outputArr.sort(() => (Math.random() - 0.5))
+  console.log(`Output is now: ${outputArr}`)
+}
 //Shuffle our outputArr
-// outputRandomizer();
+outputRandomizer();
 
 //Convert the array to a string.
 // finalPassword = outputArr.join("");
