@@ -68,7 +68,7 @@ let outputInitializer = () => {
   }
 
 }
-outputInitializer();
+// outputInitializer();
 
 //Next, I want to randomly choose from the arrays until our password length is filled.
 //Initialize i to the outputArr length because that's how many we already have in it. We want it to be lengthPrompt long so we set it to smaller than lengthPrompt, which it *SHOULD* be. Iterate i until we're done.
