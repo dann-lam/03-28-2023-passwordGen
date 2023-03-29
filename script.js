@@ -68,7 +68,7 @@ let outputInitializer = () => {
   }
 
 }
-// outputInitializer();
+outputInitializer();
 
 //Next, I want to randomly choose from the arrays until our password length is filled.
 //Initialize i to the outputArr length because that's how many we already have in it. We want it to be lengthPrompt long so we set it to smaller than lengthPrompt, which it *SHOULD* be. Iterate i until we're done.
@@ -104,19 +104,19 @@ let outputRandomizer = () => {
 outputRandomizer();
 
 //Convert the array to a string.
-// finalPassword = outputArr.join("");
+finalPassword = outputArr.join("");
 
 // return finalPassword;
-// return finalPassword;
+return finalPassword;
 }
 // Write password to the #password input
-  // function writePassword() {
-  //   var password = generatePassword();
-  //   var passwordText = document.querySelector("#password");
+  function writePassword() {
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
 
-  //   passwordText.value = password;
+    passwordText.value = password;
 
-  // }
+  }
 
 // writePassword)
 // Add event listener to generate button
