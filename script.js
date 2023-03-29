@@ -73,50 +73,50 @@ outputInitializer();
 //Next, I want to randomly choose from the arrays until our password length is filled.
 //Initialize i to the outputArr length because that's how many we already have in it. We want it to be lengthPrompt long so we set it to smaller than lengthPrompt, which it *SHOULD* be. Iterate i until we're done.
 
-let outputFinisher = () => {
-  for (i = outputArr.length; i < lengthPrompt; i++){
-    console.log(`i is ${i}`)
-    //Randomly choose a number between 0 - optionsArr.length.
+// let outputFinisher = () => {
+//   for (i = outputArr.length; i < lengthPrompt; i++){
+//     console.log(`i is ${i}`)
+//     //Randomly choose a number between 0 - optionsArr.length.
 
-    let randSelect = Math.floor(Math.random() * optionsArr.length);
-    //Store the "type" we selected's array.
-    let randSelectType = optionsArr[randSelect];
+//     let randSelect = Math.floor(Math.random() * optionsArr.length);
+//     //Store the "type" we selected's array.
+//     let randSelectType = optionsArr[randSelect];
 
-    //now choose a random character from our randomly chosen options.
-    let randSelectedChar = Math.floor(Math.random() * randSelectType.length);
-    //Now push that character into the outputArr.
-    outputArr.push(randSelectType[randSelectedChar]);
-    console.log(`Pushed! ${randSelectType[randSelectedChar]}`);
-  }
+//     //now choose a random character from our randomly chosen options.
+//     let randSelectedChar = Math.floor(Math.random() * randSelectType.length);
+//     //Now push that character into the outputArr.
+//     outputArr.push(randSelectType[randSelectedChar]);
+//     console.log(`Pushed! ${randSelectType[randSelectedChar]}`);
+//   }
 
-}
-outputFinisher();
+// }
+// outputFinisher();
 
 //Next we want to shuffle our output so the first four characters aren't as guessible.
 //This is a poor man's shuffle. there's one called Fisher-Yates which is apparently the 'best'.
 //This math.random stuff is complex.
-let outputRandomizer = () => {
-  console.log(`Output was: ${outputArr}`)
-  outputArr.sort(() => (Math.random() - 0.5))
-  console.log(`Output is now: ${outputArr}`)
-}
+// let outputRandomizer = () => {
+//   console.log(`Output was: ${outputArr}`)
+//   outputArr.sort(() => (Math.random() - 0.5))
+//   console.log(`Output is now: ${outputArr}`)
+// }
 //Shuffle our outputArr
-outputRandomizer();
+// outputRandomizer();
 
 //Convert the array to a string.
-finalPassword = outputArr.join("");
+// finalPassword = outputArr.join("");
 
 // return finalPassword;
-return finalPassword;
+// return finalPassword;
 }
 // Write password to the #password input
-  function writePassword() {
-    var password = generatePassword();
-    var passwordText = document.querySelector("#password");
+  // function writePassword() {
+  //   var password = generatePassword();
+  //   var passwordText = document.querySelector("#password");
 
-    passwordText.value = password;
+  //   passwordText.value = password;
 
-  }
+  // }
 
 // writePassword)
 // Add event listener to generate button
