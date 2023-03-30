@@ -12,7 +12,7 @@ var generateBtn = document.querySelector("#generate");
 
 function generatePassword(){
   //Initializes the length prompt to 0.
-let lengthPrompt = 0;
+// let lengthPrompt;
 //Initializes the output array.
 let outputArr = [];
 //Initializes the options Array.
@@ -27,10 +27,18 @@ const selectedSpecialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', 
 
 
 //This keeps asking the user for a value between 8 and 128. Is there a way to "stop" this if the user wants to discontinue?
-
-while (lengthPrompt > 128 || lengthPrompt < 8){
-  lengthPrompt = prompt("Please input password length between 8 - 128 characters.");
+const lengthPrompt = prompt("Please input password length between 8 - 128 characters.");
+if (!lengthPrompt){
+  alert("It can't be null. Restart.")
+  return;
 }
+if (lengthPrompt > 128 || lengthPrompt < 8){
+  alert("Give me a better number.");
+  console.log("Before");
+  console.log(lengthPrompt);
+  return  generatePassword();
+}
+
 //These prompts are to reassign true or false per each prompt.
 let lowerPrompt = confirm("Would you like lowercase letters?")
 let upperPrompt = confirm("Would you like uppercase letters?")
@@ -66,7 +74,7 @@ let outputInitializer = () => {
 
     let y = Math.floor(Math.random() * optionsArr[i].length);
     outputArr.push(optionsArr[i][y]);
-    
+
   }
 
 }
@@ -89,6 +97,7 @@ let outputFinisher = () => {
     //Now push that character into the outputArr.
     outputArr.push(randSelectType[randSelectedChar]);
     console.log(`Pushed! ${randSelectType[randSelectedChar]}`);
+    console.log(`outputArr is: ${outputArr}`);
   }
 
 }
@@ -110,6 +119,7 @@ outputRandomizer();
 finalPassword = outputArr.join("");
 
 // return finalPassword;
+
 return finalPassword;
 }
 
@@ -118,7 +128,8 @@ return finalPassword;
   function writePassword() {
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
-
+    console.log(`password is: ${password}`)
+    console.log("Added to DOM!");
     passwordText.value = password;
 
   }
