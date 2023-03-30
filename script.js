@@ -19,7 +19,7 @@ let outputArr = [];
 let optionsArr = [];
 
 //Initializes our characters.
-
+//There's a better way to do this, but HEH :)
 const lowerCaseLetters = ['a', 'b','c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's','t', 'u', 'v', 'w', 'x', 'y', 'z'];
 const upperCaseLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 const numbersZeroToNine = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
@@ -66,7 +66,7 @@ let outputInitializer = () => {
 
     let y = Math.floor(Math.random() * optionsArr[i].length);
     outputArr.push(optionsArr[i][y]);
-
+    
   }
 
 }
@@ -97,6 +97,7 @@ outputFinisher();
 //Next we want to shuffle our output so the first four characters aren't as guessible.
 //This is a poor man's shuffle. there's one called Fisher-Yates which is apparently the 'best'.
 //This math.random stuff is complex.
+// https://www.w3schools.com/js/js_array_sort.asp
 let outputRandomizer = () => {
 
   outputArr.sort(() => (Math.random() - 0.5))
